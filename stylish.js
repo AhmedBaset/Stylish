@@ -1,4 +1,4 @@
-let STYLISH_VERSION = "0.0.7 BETA";
+let STYLISH_VERSION = "0.0.75 BETA";
 let stylishCssLink = "stylish.css";
 let pageTitle, pageDescription, pageKeywords, pageAuthor, pageImage;
 let primaryColor = 
