@@ -74,7 +74,7 @@ body {
 }
 
 /* Normalize Elements */
-input, textarea, button {
+input, textarea, select, button {
 	font-family: inherit;
 	display: inline-block;
 	margin: 0.125rem;
@@ -189,7 +189,10 @@ hr {
 .btn-dark, btn-black {background-color: var(--clr-dark); color: white; border-color: var(--clr-dark);}
 .btn-white {background-color: white; color: black; border-color: black;}
 
-[class*="btn-"]:active, [class*="btn-"]:focus, .btn:active, .btn:focus { box-shadow: 0 0 10px var(--box-shadow);}
+[class*="btn-"]:active, [class*="btn-"]:focus, .btn:active, .btn:focus, input:focus { 
+	box-shadow: 0 0 0 5px var(--box-shadow);
+	outline: none;
+}
 
 [class*="btn"][class*="bg"] { border-color: currentColor; }
 
@@ -228,6 +231,25 @@ hr {
 }
 
 /* Inputs */
+.input-box {
+	border-radius: 1vmin;
+	height: 2.5em;
+	display: flex;
+	overflow: hidden;
+	border: 3px solid currentColor;
+}
+.input-box input:not([type="submit"]) { flex: 1; }
+.input-box input, .input-box [class*="btn"] {
+	height: 100%;
+	border-radius: 0;
+	padding: var(--padding) calc(var(--padding) * 3);
+	margin: 0;
+	border: none;
+	display: inline-block;
+	font-size: 1rem;
+	vertical-align: middle;
+	line-height: 1.5;
+}
 .input-primary {
 	background-color: var(--clr-primary-light);
 	border-color: var(--clr-primary);
@@ -297,7 +319,7 @@ nav, .nav {
 	color: var(--clr-dark);
 }
 nav .container, .nav .container {
-	padding: 16px;
+	padding: 0.5rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -331,7 +353,7 @@ nav .container, .nav .container {
 		background-color: var(--clr-primary);
 	}
 }
-.nav-link {
+.nav a, .nav li, nav a, nav li,  .nav-link {
 	color: currentColor;
 }
 .nav-link.active, .nav-link:not([class*="btn"]):hover {
@@ -375,6 +397,7 @@ nav .container, .nav .container {
 .w-25 {    width: 25%;  }
 .w-75 {    width: 75%;  }
 .min-w-100 { min-width: 100vw; }
+.w-fit { width: fit-content; }
 
 .w-05 {    width: 0.5rem;  }
 .w-1 {    width: 1rem;  }
@@ -666,6 +689,9 @@ nav .container, .nav .container {
 	text-decoration: underline;
 	text-decoration-color: var(--clr-primary);
 }
+.text-decoration-none, .text-decoration-none:hover {
+	text-decoration: none !important;
+}
 .italic, 	.text-italic    { font-style: italic; }
 .bold, 		.text-bold 		 { font-weight: bold; }
 .bolder, 	.text-bolder	 { font-weight: bolder; }
@@ -852,7 +878,7 @@ nav .container, .nav .container {
 [class*="linear-gradient"][class*="to-right"][class*="primary-secondary"] {background-image: linear-gradient(to right, var(--clr-primary), var(--clr-secondary));}
 
 /* Border */
-[class*="border"] { border: 1px solid var(--clr-primary); }
+[class*="border"]:not(.border-t, .border-b, .border-l, .border-r, .border-x, .border-y) { border: 1px solid var(--clr-primary); }
 .border-x { border-left: 1px solid var(--clr-primary);  border-right: 1px solid var(--clr-primary); }
 .border-y { border-top: 1px solid var(--clr-primary); border-bottom: 1px solid var(--clr-primary); }
 .border-t { border-top: 1px solid var(--clr-primary); }
@@ -864,8 +890,11 @@ nav .container, .nav .container {
 .border-secondary { border-color: var(--clr-secondary); }
 .border-tertiary { border-color: var(--clr-tertiary); }
 
-.border-black { border-color: #000; }
-.border-white { border-color: #fff; }
+.border-black { border-color: var(--clr-black); }
+.border-white { border-color: var(--clr-white); }
+.border-gray  { border-color: var(--clr-gray); }
+.border-gray-dark  { border-color: var(--clr-gray-dark); }
+.border-gray-light  { border-color: var(--clr-gray-light); }
 
 
 .border-2 { border-width: 2px; }
@@ -1127,6 +1156,8 @@ nav .container, .nav .container {
 .hover-bg-primary:hover { background-color: var(--clr-primary); }
 .hover-bg-primary-dark:hover { background-color: var(--clr-primary-dark); }
 .hover-bg-primary-light:hover { background-color: var(--clr-primary-light); }
+.hover-bg-dark:hover { background-image: linear-gradient(#00000020, #00000025); }
+.hover-bg-light:hover{ background-image: linear-gradient(#ffffff20, #ffffff25); }
 
 .hover-clr-primary:hover { color: var(--clr-primary); }
 .hover-clr-white:hover   { color: white; }
