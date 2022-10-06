@@ -167,10 +167,10 @@ hr {
 }
 
 [class*="btn-"]:not([class*="btn-outline"]):hover, [class*="btn-"][class*="active"], [class*="btn-"].hover-dark:hover, .btn:hover
-{ background-image: linear-gradient(#00000020, #00000025); }
+{ background-image: linear-gradient(#00000020, #00000025); box-shadow: inset 0 0 8px var(--box-shadow); }
 
-[class*="btn-"].hover-light:hover, [class*="btn-"].hover-black:hover, .btn.hover-light:hover
-{ background-image: linear-gradient(#ffffff20, #ffffff25); }
+[class*="btn-"].hover-light:hover, .btn-dark:hover, .btn.hover-light:hover
+{ background-image: linear-gradient(#ffffff20, #ffffff25) !important; box-shadow: inset 0 0 8px var(--box-shadow) !important }
 
 .btn-primary-light {background-color: var(--clr-primary-light); color: black; border-color: var(--clr-primary-light);}
 .btn-primary-light:hover {color: white; background: var(--clr-primary);}
