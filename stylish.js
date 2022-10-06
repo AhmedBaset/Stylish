@@ -25,7 +25,7 @@ function importantMetaTags() {
 
 	// Set meta charset
 	let metaCharset = document.querySelector("meta[charset]");
-	if (metaCharset == null || metaCharset.charset == "") {
+	if (metaCharset === null || metaCharset.charset === "") {
 		let metaTag = document.createElement("meta");
 		metaTag.setAttribute("charset", "utf-8");
 		document.head.appendChild(metaTag);
@@ -33,7 +33,7 @@ function importantMetaTags() {
 
 	// Set meta viewport
 	let metaViewport = document.querySelector('meta[name="viewport"]');
-	if (metaViewport == null || metaViewport.content == "") {
+	if (metaViewport === null || metaViewport.content === "") {
 		let metaTag = document.createElement("meta");
 		metaTag.setAttribute("name", "viewport");
 		metaTag.setAttribute("content", "width=device-width, initial-scale=1");
@@ -42,7 +42,7 @@ function importantMetaTags() {
 
 	// Set meta http-equiv
 	let metaHttpEquiv = document.querySelector("meta[http-equiv]");
-	if (metaHttpEquiv == null || metaHttpEquiv.content == "") {
+	if (metaHttpEquiv === null || metaHttpEquiv.content === "") {
 		let metaTag = document.createElement("meta");
 		metaTag.setAttribute("http-equiv", "X-UA-Compatible");
 		metaTag.setAttribute("content", "IE=edge");
@@ -51,7 +51,7 @@ function importantMetaTags() {
 
 	// Set title
 	let titleTag = document.querySelector("title");
-	if (titleTag == null || titleTag.innerHTML == "") {
+	if (titleTag === null || titleTag.innerHTML === "") {
 		let titleTag = document.createElement("title");
 		titleTag.innerHTML = pageTitle || "Coded with love by Stylish";
 		document.head.appendChild(titleTag);
@@ -59,7 +59,7 @@ function importantMetaTags() {
 
 	// Set meta description
 	let metaDescription = document.querySelector('meta[name="description"]');
-	if (metaDescription == null || metaDescription.content == "") {
+	if (metaDescription === null || metaDescription.content === "") {
 		let metaTag = document.createElement("meta");
 		metaTag.setAttribute("name", "description");
 		metaTag.setAttribute(
@@ -72,7 +72,7 @@ function importantMetaTags() {
 
 	// Set stylish.css link
 	let stylishCssLinkTag = document.querySelector('link[href*="stylish.css"]');
-	if (stylishCssLinkTag == null) {
+	if (stylishCssLinkTag === null) {
 		let linkTag = document.createElement("link");
 		linkTag.setAttribute("rel", "stylesheet");
 		linkTag.setAttribute("href", stylishCssLink);
@@ -81,7 +81,7 @@ function importantMetaTags() {
 
 	// Set meta theme-color
 	let metaThemeColor = document.querySelector('meta[name="theme-color"]');
-	if (metaThemeColor == null || metaThemeColor.content == "") {
+	if (metaThemeColor == null || metaThemeColor.content === "") {
 		let metaTag = document.createElement("meta");
 		metaTag.setAttribute("name", "theme-color");
 		metaTag.setAttribute("content", primaryColor);
