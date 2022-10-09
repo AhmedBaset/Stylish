@@ -416,6 +416,7 @@ nav, .nav {
 ::marker, .marker-primary::marker {
 	color: var(--clr-primary);
 	font-size: 1.5rem;
+	--s: #00929f;
 }
 .marker-secondary::marker {
 	color: var(--clr-secondary);
